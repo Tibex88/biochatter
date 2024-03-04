@@ -27,11 +27,12 @@ class DatabaseAgent:
         self.prompt_engine = BioCypherPromptEngine(
             model_name=model_name,
             schema_config_or_info_dict=schema_config_or_info_dict,
-            conversation_factory=conversation_factory,
+            # conversation_factory=conversation_factory,
         )
-        self.connection_args = connection_args
-        self.driver = None
+        # self.connection_args = connection_args
+        # self.driver = None
 
+    # not used
     def connect(self) -> None:
         """
         Connect to the database and authenticate.
@@ -48,6 +49,7 @@ class DatabaseAgent:
             password=password,
         )
 
+    # not used
     def is_connected(self) -> bool:
         return not self.driver is None
 
@@ -70,7 +72,9 @@ class DatabaseAgent:
         """
         cypher_query = self.prompt_engine.generate_query(query)
         # TODO some logic if it fails?
-        results = self.driver.query(query=cypher_query)
+        # replace with metta
+        # results = self.driver.query(query=cypher_query)
+        results = ""
 
         documents = []
         # return first k results
@@ -90,4 +94,4 @@ class DatabaseAgent:
             if len(documents) == k:
                 break
 
-        return documents
+        return results

@@ -57,15 +57,24 @@ class BioCypherQueryHandler:
         Explain the query - this can be called from the  frontend IF the query
         ran successfully.
         """
+        # msg = (
+        #     f"You are an expert in {self.query_lang} and will assist in "
+        #     "explaining a query.\n"
+        #     f"The query answers the following user question: '{self.question}'."
+        #     "It will be used to query a knowledge graph that contains (among "
+        #     f"others) the following entities: {self.kg_selected['entities']}, "
+        #     f"relationships: {list(self.kg_selected['relationships'].keys())}, "
+        #     f"and properties: {self.kg_selected['properties']}. "
+        # )
         msg = (
-            f"You are an expert in {self.query_lang} and will assist in "
+            f'''You are an expert in ,and will assist in "
             "explaining a query.\n"
             f"The query answers the following user question: '{self.question}'."
             "It will be used to query a knowledge graph that contains (among "
             f"others) the following entities: {self.kg_selected['entities']}, "
             f"relationships: {list(self.kg_selected['relationships'].keys())}, "
             f"and properties: {self.kg_selected['properties']}. "
-        )
+        ''')
 
         msg += "Only return the explanation, without any additional text."
 
