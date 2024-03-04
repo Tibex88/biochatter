@@ -12,6 +12,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = ">=3.10,<3.12"
+hyperon = "0.1.6"
 langchain = "^0.0.347"
 openai = "^1.1.0"
 pymupdf = "^1.22.3"
